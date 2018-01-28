@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+            <meta charset="utf-8"> 
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <style>
+                #sliderid{
+                    font-size: 20px;
+                }
+    
+                #pyramid{
+                    background-color: whitesmoke;
+                    font-size: 20px;
+                    color: purple;
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                }
+                .arg{
+                    display:inline;
+                    margin-right: 20px;
+                }
+                .col-lg-6{
+                    background-color: gray;
+                                    }
+                .container-fluid{
+                    background-color: lightgray;
+                }
+                .container{
+                    background-color: darkgray;
+                    border: solid 3px; 
+                    border-color: purple;
+                    border-radius: 1%;
+                }
+
+                .jumbotron{
+                    text-align: center;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    background-color: purple;
+                    color:whitesmoke;
+
+                }
+                #firstRow{
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-size: 18px;
+                }
+                
+            </style>      
+        <title>Pyramid Slide</title>
+    </head>
+<body class="container-fluid">
+    <div class="jumbotron">
+        <h1 class> Pyramid Slide</h1>
+        </div>
+        <div class="container">
+                <div class="row" id="firstRow">
+                        <div class="col-md-2">
+                            <p> Brick Symbol:</p>
+                        </div> 
+                        <div class="col-md-3">
+                                <select id="charChoice">
+                                    <option value="#">#</option>
+                                    <option value="@">@</option>
+                                    <option value="X">X</option>
+                                    <option value="$">$</option>
+                                </select>
+                        </div>    
+                        <div class="col-md-2">
+                            <p class="arg"> How high?</p>
+                        </div> 
+                        <div class="col-md-4">
+                            <input type="range" id="height" name="slider" min="1" max="20" oninput="myFunction(this.value)">
+                        </div>
+                        <div class="col-md-1">
+                            <strong><p id="sliderid"></p></strong>
+                        </div>    
+                </div>
+                <div class="row">
+                        <div class="col" align="center"> 
+                        <div id="pyramid"></div>
+                </div>
+        </div>    
+    
+        <script>
+                function myFunction(val){
+                    document.getElementById("sliderid").innerHTML = val;
+                }
+    
+                document.getElementById("charChoice").addEventListener("change",switchChars);
+    
+                function switchChars(){
+                    var char = document.getElementById("charChoice").value;
+                    document.getElementById("pyramid").innerHTML=char; }
+    
+            </script>
+    
+        <script src="mario.js"></script>
+    </body>
+    </html>
