@@ -18,16 +18,11 @@
                     padding-top: 30px;
                     padding-bottom: 30px;
                 }
-                .arg{
-                    display:inline;
-                    margin-right: 20px;
-                }
-                .col-lg-6{
-                    background-color: gray;
-                                    }
+            
                 .container-fluid{
                     background-color: lightgray;
                 }
+
                 .container{
                     background-color: darkgray;
                     border: solid 3px; 
@@ -52,6 +47,7 @@
             </style>      
         <title>Pyramid Slide</title>
     </head>
+
 <body class="container-fluid">
     <div class="jumbotron">
         <h1 class> Pyramid Slide</h1>
@@ -61,7 +57,7 @@
                         <div class="col-md-2">
                             <p> Brick Symbol:</p>
                         </div> 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                                 <select id="charChoice">
                                     <option value="#">#</option>
                                     <option value="@">@</option>
@@ -70,10 +66,10 @@
                                 </select>
                         </div>    
                         <div class="col-md-2">
-                            <p class="arg"> How high?</p>
+                            <p> How high?</p>
                         </div> 
-                        <div class="col-md-4">
-                            <input type="range" id="height" name="slider" min="1" max="20" oninput="myFunction(this.value)">
+                        <div class="col-md-3">
+                            <input type="range" id="height" name="slider" min="1" max="20" oninput="slideFunction(this.value)">
                         </div>
                         <div class="col-md-1">
                             <strong><p id="sliderid"></p></strong>
@@ -85,19 +81,6 @@
                 </div>
         </div>    
     
-        <script>
-                function myFunction(val){
-                    document.getElementById("sliderid").innerHTML = val;
-                }
-    
-                document.getElementById("charChoice").addEventListener("change",switchChars);
-    
-                function switchChars(){
-                    var char = document.getElementById("charChoice").value;
-                    document.getElementById("pyramid").innerHTML=char; }
-    
-            </script>
-    
-        <script src="mario.js"></script>
+        <script src="pyramid.js"></script>
     </body>
     </html>
